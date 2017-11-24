@@ -1,12 +1,37 @@
-﻿@model Formulario.Models.Alumno
+﻿<!--
+asocio a esta vista con un modelo especificon de alumno
+    Es decir se asocia con un objeto alumno
+    Para ello es necesaroo que el return view( envie un objeto)
+    //el objeto enviado debe ser del moismo tipo que el objeto bindeado
+    //en la vista
+
+-->
+@model Formulario.Models.Alumno
 
 <div class="row">
     <h1> Formulario Ingreso Alumnos</h1>
+    <!--
+    using incpora funcionalidad c# directamnte en el codigo ghtml
+        Html en realidad es un render de vista, el cual de forma asistida
+        Genera html que se bindea con los modelos u objetos de los controladores
+        Html.BeginForm( => crear un <form>
+                    "Contact", => el action del envi de formulario llaamra al metodo Contact del controlador
+                     "Home",    => a que contraldor estara escuchando el evento
+                     FormMethod.Post, => el tipo de metodo que se enviar { <form action="Home/Contact" method="POST">}
+                    new { (arroba)class = "form-horizontal" }=> añade propuiuedades a la etiqueta <form action="Home/Contact" method="POST" class="form-horizontal">
+                )
+    -->
    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
    {
         <div class="form-group">
             <label class="control-label col-sm-2" for="rut">Rut:</label>
             <div class="col-sm-6">
+                <!--
+                 (arroba)Html permite crear eriquetas html
+                    TextBoxFor, creara un input type text el cual estará
+                    bindeado con el rut (en este caso), del modelo
+                
+                  -->
                 @Html.TextBoxFor(m => m.rut, null, new { @class = "form-control", @placeholder = "Ingrese su rut" })
             </div>
         </div>

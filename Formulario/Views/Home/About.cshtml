@@ -1,6 +1,14 @@
-﻿@model IEnumerable<Formulario.Models.Alumno>
+﻿<!-- 
+ Recibe un modelo y este modelo es una lista
+    IENUMERABLE< RUTA DEL MODELO >
+    toda la vista (esta) estara bindeada a un listado de alumnos
+ -->
+@model IEnumerable<Formulario.Models.Alumno>
 
-
+<!--
+Pinto la vista con el valor que el controlador asigno al arreglo
+    ViewData["Title"] Listar Alumnos
+-->
 <h1>@ViewData["Title"]</h1> 
 
 <p>Listado de Alumnos, matriculados en la SEDE Osorno</p>
@@ -16,15 +24,27 @@
         <th></th>
     </thead>
     <tbody>
+    <!--
+        foreach ( objeto nombre_objeto in Model (por que recibimos un modelo))    
+    -->
         @foreach (Alumno alumno in Model)
         {
             <tr>
+                <!-- Html es un helper que permite generar render dinamico en la vista
+                    DisplayFor , es un metodo que permite visualizar y escribir
+                    HTML en la vista, 
+                    DisplayFOr se utiliza cuando queremos pintar un modelo
+
+                    (
+                    DisplayFor( cualquer_cosa => objeto.propiedad)
+                    )
+                    -->
                 <td>@Html.DisplayFor(item => alumno.rut)</td>
                 <td>@Html.DisplayFor(item => alumno.nombre)</td>
                 <td>@Html.DisplayFor(item => alumno.apellido)</td>
                 <td>@Html.DisplayFor(item => alumno.ciudad)</td>
                 <td>@Html.DisplayFor(item => alumno.sexo)</td>
-                <td> </td>
+                <td> esto es way</td>
                 
 
             </tr>

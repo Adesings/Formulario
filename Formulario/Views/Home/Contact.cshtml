@@ -1,4 +1,8 @@
-﻿  @model Formulario.Models.Alumno
+﻿ <!--
+el view envia como parametro un objeto tipo Alumno
+     la vista debe importar al modelo alumno
+ --> 
+@model Formulario.Models.Alumno
 
 <div class="row">
     <h1> Formulario Ingreso Alumnos</h1>
@@ -7,6 +11,7 @@
             <label class="control-label col-sm-2" for="rut">Rut:</label>
             <div class="col-sm-6">
                 @Html.DisplayFor(m => m.rut)
+                <!-- escribe un valor segun el modelo-->
             </div>
         </div>
     </div>
