@@ -22,13 +22,13 @@ namespace Formulario.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+       
+        [HttpPost]
+        public IActionResult Contact(string rut, string nombre, string apellido, string ciudad)
         {
-            ViewData["Message"] = "Your contact page.";
-
+            Console.WriteLine(rut);
             return View();
         }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
