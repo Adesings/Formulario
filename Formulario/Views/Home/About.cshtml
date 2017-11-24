@@ -1,6 +1,5 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
+﻿@model IEnumerable<Formulario.Models.Alumno>
+
 
 <h1>@ViewData["Title"]</h1> 
 
@@ -17,12 +16,20 @@
         <th></th>
     </thead>
     <tbody>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
-        <tr><td>16.113.456-2</td><td>Ivan</td><td>Peters</td><td>Osorno</td><td>Hombre</td><td></td></tr>
+        @foreach (Alumno alumno in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(item => alumno.rut)</td>
+                <td>@Html.DisplayFor(item => alumno.nombre)</td>
+                <td>@Html.DisplayFor(item => alumno.apellido)</td>
+                <td>@Html.DisplayFor(item => alumno.ciudad)</td>
+                <td>@Html.DisplayFor(item => alumno.sexo)</td>
+                <td> </td>
+                
+
+            </tr>
+        }
+       
 
     
     </tbody>

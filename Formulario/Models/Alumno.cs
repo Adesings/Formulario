@@ -7,11 +7,12 @@ namespace Formulario.Models
 {
     public class Alumno
     {
-       public  string rut;
+        public  string rut;
         public string nombre;
         public string apellido;
         public string sexo;
         public string ciudad;
         public string fono;
+
     }
 }
